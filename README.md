@@ -1,2 +1,2 @@
 # myenvcfg
-vimrc ant tmux config for linux
+vimrc and tmux config files for Linux
