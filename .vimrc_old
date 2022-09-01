@@ -1,0 +1,125 @@
+set nocompatible " be improved
+"set term=screen
+" 搜索逐字符高亮
+set hlsearch
+set path+=**
+set wildmenu
+" leader 键
+let mapleader = ','
+"配置backspace键工作方式
+set backspace=indent,eol,start
+"搜索时，关键字高亮
+set hls
+"设置在Vim中可以使用鼠标 防止在Linux终端下无法拷贝
+set mouse=a
+" 复制粘贴到系统剪贴板
+map <C-C> "+y<CR>
+"map <C-V> "+p<CR>
+" 快速扩大分屏
+map <C-M> :res +2<CR>
+map <C-N> :vertical res +2<CR>
+map <C-H> :bn
+map <C-L> :bp
+"map <C-B> :ls
+" 窗口缩放
+set modifiable
+"设置ctags的快捷键为 Ctrl-F12  
+map <F10> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>    
+"显示行号
+set number
+"设置在编辑过程中右下角显示光标的行列信息
+set ruler
+"当一行文字很长时取消换行
+"set nowrap
+"在状态栏显示正在输入的命令
+set showcmd
+"设置历史记录条数
+set history=1000
+"设置取消备份 禁止临时文件生成
+set nobackup
+set noswapfile
+"突出现实当前行列
+set cursorline
+"set cursorcolumn
+"设置匹配模式 类似当输入一个左括号时会匹配相应的那个右括号
+set showmatch
+"设置C/C++方式自动对齐
+set autoindent
+set cindent
+"开启语法高亮功能
+syntax enable
+syntax on
+"设置搜索时忽略大小写
+set ignorecase
+"设置Tab宽度
+set tabstop=2
+"设置自动对齐空格数
+set shiftwidth=2
+"设置按退格键时可以一次删除4个空格
+set softtabstop=4
+set smarttab
+"将Tab键自动转换成空格 真正需要Tab键时使用[Ctrl + V + Tab]
+set expandtab
+"设置编码方式
+set encoding=utf-8
+""自动判断编码时 依次尝试一下编码
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+"检测文件类型
+filetype on
+"针对不同的文件采用不同的缩进方式
+filetype indent on
+"允许插件
+filetype plugin on
+"启动智能补全
+filetype plugin indent on
+
+filetype off " required! /** 从这行开始，vimrc配置 **/
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'Chiel92/vim-autoformat'
+nnoremap <F6> :Autoformat<CR>
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
+
+Plugin 'scrooloose/nerdtree'
+nnoremap <F3> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+Plugin 'https://github.com/bling/vim-airline'
+Plugin 'git://github.com/tomasr/molokai.git'
+Plugin 'davidhalter/jedi-vim'
+
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'Yggdroot/indentLine'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'tell-k/vim-autopep8'
+Plugin 'cpiger/NeoDebug'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+"molokai 主题 monokai的进化版
+set t_Co=256
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
+
+let g:ycm_add_preview_to_completeopt = 0
+
+packadd termdebug
+let g:termdebug_wide = 163
+
+set completeopt-=preview
