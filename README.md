@@ -2,12 +2,21 @@
 vimrc and tmux config files for Linux
 use Vundle to install plugins
 
-0, clone this repo and mv .vimrc to ~/
+update vim to 8.2 or higher first
+```
+  sudo add-apt-repository ppa:jonathonf/vim
+  sudo apt update
+  sudo apt install vim
+```
 
-1, git colne https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+0  clone this repo and mv .vimrc to ~/
 
-2, :BundleInstall
+1  clone Vundle to manage plugin
+```
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+2  :BundleInstall
 
-3, mv colors to .vim/ as molokai cant be installed.
+3  mv colors to .vim/ as molokai cant be installed.
 
-4, (optional) install tmux: suao apt-get install tmux
+4  (optional) install tmux: suao apt-get install tmux and mv .tmux.conf to ~/
