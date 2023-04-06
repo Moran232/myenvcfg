@@ -32,3 +32,11 @@ mv .tmux.conf to ~/
 ```
 :packadd termdebug
 ```
+6  (optional) gitlab sshkey add
+```
+# 配置git账户
+$ git config --global user.name "yourname"
+$ git config --global user.email "youremail"
+# 本地生成ssh秘钥和公钥
+$ ssh-keygen -t rsa -C "youremail"
+```
