@@ -4,6 +4,7 @@ use Vundle to install plugins
 
 update vim to 8.2 or higher first
 ```
+  apt-get install software-properties-common (when add-apt-repository failed)
   sudo add-apt-repository ppa:jonathonf/vim
   sudo apt update
   sudo apt install vim
