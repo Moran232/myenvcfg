@@ -118,9 +118,9 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PYTHONPATH=/usr/local/bin
-alias proxy_on='export http_proxy=http://proxy.sensetime.com:3128/ ; export https_proxy=http://proxy.sensetime.com:3128/ ; export HTTP_PROXY=http://proxy.sensetime.com:3128/ ; export HTTPS_PROXY=http://proxy.sensetime.com:3128/'
-alias proxy_off='unset http_proxy; unset https_proxy; unset HTTP_PROXY;unset HTTPS_PROXY'
+# export PYTHONPATH=/usr/local/bin
+# alias proxy_on='export http_proxy=http://proxy.sensetime.com:3128/ ; export https_proxy=http://proxy.sensetime.com:3128/ ; export HTTP_PROXY=http://proxy.sensetime.com:3128/ ; export HTTPS_PROXY=http://proxy.sensetime.com:3128/'
+# alias proxy_off='unset http_proxy; unset https_proxy; unset HTTP_PROXY;unset HTTPS_PROXY'
 TZ='Aisa/Shanghai'
 export TZ
 #export TERM='linux'
@@ -141,7 +141,8 @@ alias tmux="TERM=screen-256color-bce tmux"
 #fi
 #unset __conda_setup
 # <<< conda initialize <<<
-export PATH="home/zhangmaoquan/ananconda3/bin:$PATH"
+# export PATH="home/zhangmaoquan/ananconda3/bin:$PATH"
 alias add_pythonpath='export PYTHONPATH=$PYTHONPATH:${PWD}'
-export localpath=onnx@10.4.11.43:/mnt/samsung_1t/onnx/zhangmaoquan
+# export localpath=onnx@10.4.11.43:/mnt/samsung_1t/onnx/zhangmaoquan
 #alias scp_to_local='scp_to_local(){ scp -r $1 onnx@10.4.11.43:/mnt/samsung_1t/onnx/zhangmaoquan };scp_to_local'
+export IPDB_CONTEXT_SIZE="20"
