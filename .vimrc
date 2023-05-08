@@ -144,6 +144,7 @@ filetype plugin indent on    " required
 set t_Co=256
 let g:molokai_original = 1 "prefer the scheme to match the original monokai background
 let g:rehash256 = 1
+set term=screen-256color
 colorscheme molokai
 "===============ycm设置==========================
 " 禁止YCM 自动弹出函数原型预览窗
