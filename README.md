@@ -25,7 +25,8 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 4  (optional) install tmux: 
 ```
-suao apt-get install tmux 
+(sudo apt-get install libevent-dev ncurses-dev build-essential bison pkg-config)
+sudo apt-get install tmux 
 mv .tmux.conf to ~/
 ```
 5  (optional) install termdebug
