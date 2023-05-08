@@ -55,7 +55,7 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
-
+echo "color_prompt="$color_prompt
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
@@ -124,8 +124,8 @@ fi
 TZ='Aisa/Shanghai'
 export TZ
 #export TERM='linux'
-alias tmux="TERM=screen-256color-bce tmux"
-
+export TERM='xterm-256color'
+#alias tmux="TERM=screen-256color-bce tmux"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
