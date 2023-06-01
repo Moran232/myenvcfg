@@ -9,6 +9,18 @@ update vim to 8.2 or higher first
   sudo apt update
   sudo apt install vim
 ```
+for centos
+```
+git clone https://github.com/vim/vim.git
+cd vim/
+./configure
+make -j8
+sudo make install
+
+sudo yum remove vim -y
+sudo rm /usr/bin/vim
+sudo cp ./vim /usr/bin/
+```
 
 0  clone this repo and mv .vimrc to ~/
 
