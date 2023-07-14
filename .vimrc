@@ -128,7 +128,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'Yggdroot/indentLine'
 
 "代码补全
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'jiangmiao/auto-pairs'
 

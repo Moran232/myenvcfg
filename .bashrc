@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -121,28 +121,37 @@ fi
 # export PYTHONPATH=/usr/local/bin
 # alias proxy_on='export http_proxy=http://proxy.sensetime.com:3128/ ; export https_proxy=http://proxy.sensetime.com:3128/ ; export HTTP_PROXY=http://proxy.sensetime.com:3128/ ; export HTTPS_PROXY=http://proxy.sensetime.com:3128/'
 # alias proxy_off='unset http_proxy; unset https_proxy; unset HTTP_PROXY;unset HTTPS_PROXY'
-TZ='Aisa/Shanghai'
+TZ='Asia/Shanghai'
 export TZ
 #export TERM='linux'
 export TERM='xterm-256color'
-#alias tmux="TERM=screen-256color-bce tmux"
+# alias tmux="TERM=screen-256color-bce tmux"
+# alias tmux="tmux source ~/.bashrc"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/home/zhangmaoquan/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-#if [ $? -eq 0 ]; then
-#    eval "$__conda_setup"
-#else
-#    if [ -f "/home/zhangmaoquan/anaconda3/etc/profile.d/conda.sh" ]; then
-#        . "/home/zhangmaoquan/anaconda3/etc/profile.d/conda.sh"
-#    else
-#        export PATH="/home/zhangmaoquan/anaconda3/bin:$PATH"
-#    fi
-#fi
-#unset __conda_setup
+__conda_setup="$('/root/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/root/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/root/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/root/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
 # <<< conda initialize <<<
 # export PATH="home/zhangmaoquan/ananconda3/bin:$PATH"
 alias add_pythonpath='export PYTHONPATH=$PYTHONPATH:${PWD}'
 # export localpath=onnx@10.4.11.43:/mnt/samsung_1t/onnx/zhangmaoquan
 #alias scp_to_local='scp_to_local(){ scp -r $1 onnx@10.4.11.43:/mnt/samsung_1t/onnx/zhangmaoquan };scp_to_local'
 export IPDB_CONTEXT_SIZE="20"
+export CUDA_HOME=/usr/local/cuda
+export PATH=/usr/local/cuda/bin:$PATH
+export CPATH=/usr/local/cuda/include:$CPATH
+export LIBRARY_PATH=/usr/local/cuda/lib64:$LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
+# export LD_LIBRARY_PATH=/usr/lib/python3.7/site-packages/nvidia/cublas/lib/:$LD_LIBRARY_PATH
+export myoss=oss://a100-chatgpt/zhangmaoquan.zmq
+export PATH="/usr/local/cmake/bin:$PATH"
